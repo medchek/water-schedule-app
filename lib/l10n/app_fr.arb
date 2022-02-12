@@ -1,0 +1,71 @@
+{
+  "wilayaInputHint": "Veuillez selectionner une wilaya",
+  "townInputHint": "Veuillez selectionner une commune",
+  "townInputDisabledText": "Veuillez dabord choisir une wilaya",
+  "homeNotice": "Les programmes d'eau peuvent changer à tout moment",
+  "homeFetchSchedule": "Trouver",
+  "schedule": "Programme d'eau",
+  "currentWeek": "Cette semaine",
+  "nextWeek": "Semaine prochaine",
+  "theNextWeek": "la semaine prochaine",
+  "scheduleNotAddedYet": "Le programme d'eau de {week} n'a pas encore été ajouté pour {town}",
+  "@scheduleNotAddedYet": {
+    "placeholders": {
+      "week": {
+        "type": "String",
+        "description": "the target schedule week"
+      },
+      "town": {
+        "type": "String",
+        "description": "the town to which the schedule refers"
+      }
+    }
+  },
+  "secheduleFetchFail": "Le programme d'eau n'a pa pu être chargé, veuillez verifier votre connexion ou veillez reéssayer ultérieurement",
+  "unreachableServer": "Serveur injoignable, veuillez reéssayer ultérieurement",
+  "settings": "Paramètres",
+  "theme": "Apparence",
+  "sys": "Système",
+  "dark": "Sombre",
+  "light": "Clair",
+  "lang": "Langues",
+  "sysLang": "Langue du systèm",
+  "waterUnavailable": "Coupure total",
+  "period": "disponible de {from} à {to}",
+  "@period": {
+    "description": "displays the time of a period",
+    "placeholders": {
+      "from": {
+        "description": "the time at  which the water is restored"
+      },
+      "to": {
+        "description": "the time at which the water is cut"
+      }
+    }
+  },
+  "multiPeriod": "disponible de {from} à {to} puis de {secondFrom} à {secondTo}",
+  "@multiPeriod": {
+    "description": "displays the time of a multiple periods",
+    "placeholders": {
+      "from": {
+        "description": "the time at  which the water is restored"
+      },
+      "to": {
+        "description": "the time at which the water is cut"
+      },
+      "secondFrom": {
+        "description": "the time at  which the water is restored again in the same day"
+      },
+      "secondTo": {
+        "description": "the time at which the water is cut again in the same day"
+      }
+    }
+  },
+  "saturday": "Samedi",
+  "sunday": "Dimanche",
+  "monday": "Lundi",
+  "tuesday": "Mardi",
+  "wednesday": "Mercredi",
+  "thursday": "Jeudi",
+  "firday": "Vendredi"
+}
