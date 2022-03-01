@@ -9,12 +9,13 @@ class DarkTheme {
       brightness: Brightness.dark,
       // backgroundColor: AppColors.darkAppDarkBlue,
       scaffoldBackgroundColor: AppColors.darkAppDarkBlue,
-      primaryColor: AppColors.appBlue,
+      primaryColor: const Color(0xff698ee0),
       primaryColorDark: Colors.white,
       primaryColorLight: AppColors.darkAppCardBg,
       // canvasColor: AppColors.appDarkBlue,
       canvasColor: AppColors.darkAppCanvasBg,
       shadowColor: AppColors.selectDropShadow,
+      disabledColor: Colors.white54,
 
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(

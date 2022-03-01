@@ -14,10 +14,14 @@ class AppColors {
   static const appLightBlueGrey = Color(0xfff2f5fc);
   static const appDisabled = Color(0xffC1C9DC);
   // dark theme colors
+
   static const darkAppDarkBlue = Color(0xff0D1437);
   static const darkAppDisabledBg = Color(0xff2B3154);
-  static const darkAppCardBg = Color(0xff16225A);
-  static const darkAppCanvasBg = Color(0xff01051C);
+  // static const darkAppCardBg = Color(0xff16225A);
+  // static const darkAppCardBg = Color(0xff11173d);
+  static const darkAppCardBg = Color(0xff151d4a);
+  // static const darkAppCanvasBg = Color(0xff01051C);
+  static const darkAppCanvasBg = Color(0xff090d29);
 
   static const darkAppDropShadow = Color.fromRGBO(1, 5, 28, 0.7);
   static const selectDropShadow = Color.fromRGBO(54, 62, 86, 0.16);

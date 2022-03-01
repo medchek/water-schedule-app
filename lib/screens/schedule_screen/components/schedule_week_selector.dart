@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:provider/provider.dart';
-import '../../../utils/app_colors.dart';
 import '../../../store/modules/schedules.dart';
 import '../../../store/modules/towns.dart';
 import '../../../utils/enums.dart';
@@ -66,9 +65,9 @@ class ScheduleWeekSelector extends StatelessWidget {
                       child: date != null
                           ? Text(
                               date,
-                              style: const TextStyle(
+                              style: TextStyle(
                                 fontSize: 11,
-                                color: AppColors.appBlue,
+                                color: theme.primaryColor,
                                 fontWeight: FontWeight.w500,
                               ),
                             )
