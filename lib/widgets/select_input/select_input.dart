@@ -38,51 +38,52 @@ class SelectInput extends StatelessWidget {
     final theme = Theme.of(context);
 
     return SelectInputBase(
+        ripple: true,
         child: DropdownButtonHideUnderline(
-      child: DropdownButton<int>(
-        isExpanded: true,
-        // menuMaxHeight: 100,
+          child: DropdownButton<int>(
+            isExpanded: true,
+            // menuMaxHeight: 100,
 
-        borderRadius: BorderRadius.circular(borderRadius),
-        hint: Text(
-          hint,
-          style: TextStyle(
-            fontFamily: "Noto Kufi Arabic",
-            color: !disabled ? theme.primaryColor : AppColors.appGrey,
-            fontSize: 15,
-          ),
-        ),
-        value: value,
-        icon: Icon(
-          Icons.expand_more,
-          color: !disabled ? theme.primaryColor : AppColors.appGrey,
-          size: 35,
-        ),
-        elevation: 1,
-
-        style: TextStyle(
-          color: theme.primaryColor,
-          fontSize: 16,
-        ),
-        items: items!.map(
-          (item) {
-            return DropdownMenuItem(
-              enabled: !disabled,
-              value: item.code,
-              child: Text(
-                "${displayCode ? item.code.toString() + ' - ' : ''}${locale == "ar" ? item.arName : StringUtils.capitalize(item.name)}",
-                style: const TextStyle(fontFamily: "Noto Kufi Arabic"),
+            borderRadius: BorderRadius.circular(borderRadius),
+            hint: Text(
+              hint,
+              style: TextStyle(
+                fontFamily: "Noto Kufi Arabic",
+                color: !disabled ? theme.primaryColor : AppColors.appGrey,
+                fontSize: 15,
               ),
-            );
-          },
-        ).toList(),
-        // underline: const SizedBox(),
-        onChanged: disabled
-            ? null
-            : (selected) {
-                onPress!(selected);
+            ),
+            value: value,
+            icon: Icon(
+              Icons.expand_more,
+              color: !disabled ? theme.primaryColor : AppColors.appGrey,
+              size: 35,
+            ),
+            elevation: 1,
+
+            style: TextStyle(
+              color: theme.primaryColor,
+              fontSize: 16,
+            ),
+            items: items!.map(
+              (item) {
+                return DropdownMenuItem(
+                  enabled: !disabled,
+                  value: item.code,
+                  child: Text(
+                    "${displayCode ? item.code.toString() + ' - ' : ''}${locale == "ar" ? item.arName : StringUtils.capitalize(item.name)}",
+                    style: const TextStyle(fontFamily: "Noto Kufi Arabic"),
+                  ),
+                );
               },
-      ),
-    ));
+            ).toList(),
+            // underline: const SizedBox(),
+            onChanged: disabled
+                ? null
+                : (selected) {
+                    onPress!(selected);
+                  },
+          ),
+        ));
   }
 }

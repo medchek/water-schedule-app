@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class SelectInputBase extends StatelessWidget {
   final double height;
   final double borderRadius;
+  final bool ripple;
   final Widget child;
   // static const double _horizontalPadding = 5;
 
@@ -10,6 +11,7 @@ class SelectInputBase extends StatelessWidget {
     required this.child,
     this.height = 52,
     this.borderRadius = 10,
+    this.ripple = false,
     Key? key,
   }) : super(key: key);
 
@@ -21,13 +23,11 @@ class SelectInputBase extends StatelessWidget {
     // print(locale);
 
     return Container(
-      alignment: locale == "ar" ? Alignment.centerRight : Alignment.centerLeft,
       height: height,
-      padding: const EdgeInsets.symmetric(horizontal: 15),
-      // alignment: Alignment.center,
+      width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(borderRadius),
-        color: theme.canvasColor,
+        // color: theme.canvasColor,
         boxShadow: [
           BoxShadow(
             blurRadius: 17,
@@ -36,7 +36,27 @@ class SelectInputBase extends StatelessWidget {
           ),
         ],
       ),
-      child: child,
+      child: Material(
+        borderRadius: BorderRadius.circular(borderRadius),
+        color: theme.canvasColor,
+        child: InkWell(
+          borderRadius: BorderRadius.circular(borderRadius),
+          onTap: ripple ? () {} : null,
+          splashColor: theme.splashColor,
+          highlightColor: theme.canvasColor.withOpacity(.5),
+          enableFeedback: true,
+          child: Container(
+            alignment:
+                locale == "ar" ? Alignment.centerRight : Alignment.centerLeft,
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            height: height,
+            // width: double.infinity,
+            // alignment: Alignment.center,
+            color: Colors.transparent,
+            child: child,
+          ),
+        ),
+      ),
     );
   }
 }
