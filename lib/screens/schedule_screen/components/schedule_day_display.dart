@@ -17,6 +17,8 @@ class ScheduleDayDisplay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final String locale = Localizations.localeOf(context).toString();
+
     final theme = Theme.of(context);
 
     return Flexible(
@@ -37,12 +39,17 @@ class ScheduleDayDisplay extends StatelessWidget {
             SizedBox(
               width: 100,
               height: 30,
-              child: Text(
-                day,
-                style: TextStyle(
-                  color: theme.primaryColorDark,
-                  fontWeight: FontWeight.w700,
-                  fontSize: 16,
+              child: Align(
+                alignment: locale == "ar"
+                    ? Alignment.centerRight
+                    : Alignment.centerLeft,
+                child: Text(
+                  day,
+                  style: TextStyle(
+                    color: theme.primaryColorDark,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 16,
+                  ),
                 ),
               ),
             ),
@@ -53,7 +60,9 @@ class ScheduleDayDisplay extends StatelessWidget {
                   fontSize: 15,
                   color: isWaterUnavailable
                       ? AppColors.appError
-                      : theme.primaryColor,
+                      : theme.brightness == Brightness.light
+                          ? theme.primaryColor
+                          : const Color(0xffbdd1ff),
                 ),
               ),
             ),
