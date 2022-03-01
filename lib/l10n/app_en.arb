@@ -8,7 +8,7 @@
   "currentWeek": "Current week",
   "nextWeek": "Next week",
   "theNextWeek": "Next week",
-  "scheduleNotAddedYet": "{week} schedule has not yet been added for {town}",
+  "scheduleNotAddedYet": "{week} schedule has not been added for {town} yet",
   "secheduleFetchFail": "Unable to load schedule, plese check your connexion or try again later",
   "settings": "Settings",
   "theme": "Theme",
