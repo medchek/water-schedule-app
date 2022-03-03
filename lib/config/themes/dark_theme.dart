@@ -33,7 +33,6 @@ class DarkTheme {
       // primaryColorDark: AppColors.appDarkBlue,
       colorScheme: const ColorScheme(
         primary: AppColors.appBlue,
-        primaryVariant: AppColors.appVividBlue,
         secondary: AppColors.appDarkBlue,
         error: AppColors.appError,
         brightness: Brightness.dark,
@@ -44,7 +43,6 @@ class DarkTheme {
         onPrimary: Colors.white,
         onSurface: AppColors.appDarkBlue,
         surface: Colors.white,
-        secondaryVariant: AppColors.appPaleBlue,
       ),
     );
   }

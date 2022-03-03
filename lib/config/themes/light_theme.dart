@@ -20,7 +20,6 @@ class LightTheme {
       )),
       colorScheme: const ColorScheme(
         primary: AppColors.appBlue,
-        primaryVariant: AppColors.appVividBlue,
         secondary: AppColors.appDarkBlue,
         error: AppColors.appError,
         brightness: Brightness.light,
@@ -31,7 +30,6 @@ class LightTheme {
         onPrimary: Colors.white,
         onSurface: AppColors.appDarkBlue,
         surface: Colors.white,
-        secondaryVariant: AppColors.appPaleBlue,
       ),
     );
   }
