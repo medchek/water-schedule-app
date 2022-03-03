@@ -36,6 +36,8 @@ abstract class _Ui with Store {
   Locale? get selectedLocale {
     if (_locale != null) {
       return Locale(_locale!);
+    } else {
+      return null;
     }
   }
 

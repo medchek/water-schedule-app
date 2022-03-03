@@ -136,6 +136,7 @@ class ScheduleWeekSelector extends StatelessWidget {
           targetSchedule: scheduleStore.targetSchedule,
         );
       }
+      return null;
     }
 
     return Row(

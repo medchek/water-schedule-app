@@ -35,8 +35,8 @@ class ScheduleRepository {
         case 200:
           final schedule = Schedule.fromJson(json.decode(response.body));
           return schedule;
-        // default:
-        //   return ErrorSchedule();
+        default:
+          return null;
       }
     } catch (err) {
       rethrow;

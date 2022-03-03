@@ -38,6 +38,8 @@ abstract class _SchedulesBase with Store {
     final weekEnd = schedule?.data?.weekEnd;
     if (weekStart != null && weekEnd != null) {
       return "$weekStart - $weekEnd";
+    } else {
+      return null;
     }
   }
 
