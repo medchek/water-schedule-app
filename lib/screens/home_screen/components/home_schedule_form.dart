@@ -11,7 +11,9 @@ class ScheduleForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool isSmHight = MediaQuery.of(context).size.height <= 640;
     final t = AppLocalizations.of(context)!;
+
     return Expanded(
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -25,10 +27,11 @@ class ScheduleForm extends StatelessWidget {
             const SizedBox(height: 20),
             Text(
               t.homeNotice,
-              style: const TextStyle(color: AppColors.appGrey, fontSize: 12),
+              style: TextStyle(
+                  color: AppColors.appGrey, fontSize: isSmHight ? 10 : 12),
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 30),
+            SizedBox(height: isSmHight ? 20 : 30),
             const FetchScheduleButton(),
           ],
         ),

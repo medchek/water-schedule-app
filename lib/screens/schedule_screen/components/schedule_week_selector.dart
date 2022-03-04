@@ -14,15 +14,18 @@ class ScheduleWeekSelector extends StatelessWidget {
     required String text,
     required VoidCallback onPress,
     required ThemeData theme,
+    required BuildContext context,
     String? date,
     bool isLoading = false,
     bool isSelected = false,
   }) {
+    final bool isSmHight = MediaQuery.of(context).size.height <= 640;
+
     return Expanded(
       child: Stack(
         children: [
           Container(
-            height: 70,
+            height: isSmHight ? 50 : 70,
             width: double.infinity,
             decoration: BoxDecoration(
               border: BorderDirectional(
@@ -55,7 +58,7 @@ class ScheduleWeekSelector extends StatelessWidget {
                         color: isSelected
                             ? theme.primaryColor
                             : theme.disabledColor,
-                        fontSize: 17,
+                        fontSize: isSmHight ? 14 : 17,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
@@ -66,7 +69,7 @@ class ScheduleWeekSelector extends StatelessWidget {
                           ? Text(
                               date,
                               style: TextStyle(
-                                fontSize: 11,
+                                fontSize: isSmHight ? 9 : 11,
                                 color: theme.primaryColor,
                                 fontWeight: FontWeight.w500,
                               ),
@@ -144,6 +147,7 @@ class ScheduleWeekSelector extends StatelessWidget {
       children: [
         Observer(builder: (_) {
           return _customButton(
+            context: context,
             text: t.currentWeek,
             isSelected: scheduleStore.targetSchedule == TargetSchedule.current,
             onPress: () => setTargetSchedule(TargetSchedule.current),
@@ -157,6 +161,7 @@ class ScheduleWeekSelector extends StatelessWidget {
         }),
         Observer(builder: (_) {
           return _customButton(
+            context: context,
             isSelected: scheduleStore.targetSchedule == TargetSchedule.next,
             text: t.nextWeek,
             onPress: () => setTargetSchedule(TargetSchedule.next),

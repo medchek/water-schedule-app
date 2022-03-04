@@ -36,6 +36,8 @@ class SelectInput extends StatelessWidget {
   Widget build(BuildContext context) {
     final String locale = Localizations.localeOf(context).toString();
     final theme = Theme.of(context);
+    final bool isSmHight = MediaQuery.of(context).size.height <= 640;
+    final bool isArLocale = locale == "ar";
 
     return SelectInputBase(
         ripple: true,
@@ -48,22 +50,22 @@ class SelectInput extends StatelessWidget {
             hint: Text(
               hint,
               style: TextStyle(
-                fontFamily: "Noto Kufi Arabic",
+                fontFamily: isArLocale ? "Noto Kufi Arabic" : null,
                 color: !disabled ? theme.primaryColor : AppColors.appGrey,
-                fontSize: 15,
+                fontSize: isSmHight ? 13 : 15,
               ),
             ),
             value: value,
             icon: Icon(
               Icons.expand_more,
               color: !disabled ? theme.primaryColor : AppColors.appGrey,
-              size: 35,
+              size: isSmHight ? 30 : 35,
             ),
             elevation: 1,
 
             style: TextStyle(
               color: theme.primaryColor,
-              fontSize: 16,
+              fontSize: isSmHight ? 14 : 16,
             ),
             items: items!.map(
               (item) {
@@ -72,7 +74,8 @@ class SelectInput extends StatelessWidget {
                   value: item.code,
                   child: Text(
                     "${displayCode ? item.code.toString() + ' - ' : ''}${locale == "ar" ? item.arName : StringUtils.capitalize(item.name)}",
-                    style: const TextStyle(fontFamily: "Noto Kufi Arabic"),
+                    style: TextStyle(
+                        fontFamily: isArLocale ? "Noto Kufi Arabic" : null),
                   ),
                 );
               },

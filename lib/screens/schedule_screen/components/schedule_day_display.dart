@@ -20,6 +20,7 @@ class ScheduleDayDisplay extends StatelessWidget {
     final String locale = Localizations.localeOf(context).toString();
 
     final theme = Theme.of(context);
+    final bool isSmHight = MediaQuery.of(context).size.height <= 640;
 
     return Flexible(
       flex: 1,
@@ -48,7 +49,7 @@ class ScheduleDayDisplay extends StatelessWidget {
                   style: TextStyle(
                     color: theme.primaryColorDark,
                     fontWeight: FontWeight.w700,
-                    fontSize: 16,
+                    fontSize: isSmHight ? 15 : 16,
                   ),
                 ),
               ),
@@ -57,7 +58,7 @@ class ScheduleDayDisplay extends StatelessWidget {
               child: Text(
                 StringUtils.capitalize(text),
                 style: TextStyle(
-                  fontSize: 15,
+                  fontSize: isSmHight ? 13 : 15,
                   color: isWaterUnavailable
                       ? AppColors.appError
                       : theme.brightness == Brightness.light

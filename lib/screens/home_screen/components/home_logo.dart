@@ -5,8 +5,10 @@ class HomeLogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool isSmHight = MediaQuery.of(context).size.height <= 640;
+    final double heightMultiplier = isSmHight ? 0.32 : 0.34;
     return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.34,
+      height: MediaQuery.of(context).size.height * heightMultiplier,
       // width: MediaQuery.of(context).size.width * 0.7,
       child: Center(
         child: AspectRatio(

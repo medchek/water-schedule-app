@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SelectInputBase extends StatelessWidget {
-  final double height;
+  final double? height;
   final double borderRadius;
   final bool ripple;
   final Widget child;
@@ -9,7 +9,7 @@ class SelectInputBase extends StatelessWidget {
 
   const SelectInputBase({
     required this.child,
-    this.height = 52,
+    this.height,
     this.borderRadius = 10,
     this.ripple = false,
     Key? key,
@@ -19,7 +19,9 @@ class SelectInputBase extends StatelessWidget {
   Widget build(BuildContext context) {
     final String locale = Localizations.localeOf(context).toString();
     final theme = Theme.of(context);
-
+    final bool isSmHight = MediaQuery.of(context).size.height <= 640;
+    final double responsiveHeight = isSmHight ? 45 : 52;
+    final double height = this.height ?? responsiveHeight;
     // print(locale);
 
     return Container(

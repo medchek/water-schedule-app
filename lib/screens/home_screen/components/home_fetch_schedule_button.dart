@@ -27,21 +27,22 @@ class FetchScheduleButton extends StatelessWidget {
         scheduleStore.setTargetSchedule(TargetSchedule.current);
         scheduleStore.fetchTownSchedule(
             townCode: townCode, targetSchedule: TargetSchedule.current);
-        // Navigator.pushNamed(
-        //   context,
-        //   ScheduleScreen.routeName,
-        // );
         AutoRouter.of(context).push(const ScheduleRouter());
       }
     }
+
+    // responsivity
+    final bool isSmHight = MediaQuery.of(context).size.height <= 640;
+    final double buttonHeight = isSmHight ? 40 : 45;
+    final double marginX = isSmHight ? 60 : 50;
 
     return Observer(builder: (_) {
       final isDisabled = (wilayaStore.selectedWilaya == null ||
           townStore.selectedTown == null);
 
       return Container(
-        margin: const EdgeInsets.symmetric(horizontal: 50),
-        height: 45,
+        margin: EdgeInsets.symmetric(horizontal: marginX),
+        height: buttonHeight,
         child: ElevatedButton(
             onPressed: isDisabled ? null : handleOnPress,
             style: ElevatedButton.styleFrom(

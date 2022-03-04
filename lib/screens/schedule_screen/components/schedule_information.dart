@@ -14,6 +14,8 @@ class ScheduleInformation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final String locale = Localizations.localeOf(context).toString();
+    final bool isSmHight = MediaQuery.of(context).size.height <= 640;
+
     final bool isArLocale = locale == "ar";
     final wilayaStore = Provider.of<Wilayas>(context);
     final townStore = Provider.of<Towns>(context);
@@ -39,7 +41,7 @@ class ScheduleInformation extends StatelessWidget {
           style: TextStyle(
             color: theme.primaryColorDark,
             fontWeight: FontWeight.w500,
-            fontSize: 20,
+            fontSize: isSmHight ? 17 : 20,
           ),
         );
       }),

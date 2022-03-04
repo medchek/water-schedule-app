@@ -14,14 +14,14 @@ class Header extends StatelessWidget {
   Widget build(BuildContext context) {
     final smHight = MediaQuery.of(context).size.height <= 640;
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 30),
+      margin: const EdgeInsets.symmetric(horizontal: 25),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             "SEAAL",
             style: TextStyle(
-              fontWeight: smHight ? FontWeight.w500 : FontWeight.w700,
+              fontWeight: FontWeight.w700,
               fontSize: smHight ? 25 : 30,
               fontStyle: FontStyle.italic,
               color: Theme.of(context).primaryColorDark,
