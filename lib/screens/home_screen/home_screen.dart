@@ -37,13 +37,6 @@ class HomeScreen extends StatelessWidget {
         child: Stack(
           fit: StackFit.expand,
           children: [
-            Column(
-              children: const [
-                Header(),
-                HomeLogo(),
-                ScheduleForm(),
-              ],
-            ),
             Positioned(
               bottom: 0,
               left: 0,
@@ -61,7 +54,14 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-            )
+            ),
+            Column(
+              children: const [
+                Header(),
+                HomeLogo(),
+                ScheduleForm(),
+              ],
+            ),
           ],
         ),
       ),
