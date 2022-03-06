@@ -14,5 +14,5 @@ class AppConfig {
   static const String? apiVersion = "v1";
   static const int? apiPort = null;
 
-  static const int requestTimeoutSeconds = 10;
+  static const int requestTimeoutSeconds = 15;
 }
