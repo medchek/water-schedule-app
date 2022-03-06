@@ -18,6 +18,9 @@
   "lang": "Languages",
   "sysLang": "System language",
   "unreachableServer": "Unable to reach the server, please try again later",
+  "waterUnavailable": "Unavailable",
+  "period": "available from {from} to {to}",
+  "multiPeriod": "available from {from} to {to} then from {secondFrom} to {secondTo}",
   "saturday": "Saturday",
   "sunday": "Sunday",
   "monday": "Monday",
@@ -25,7 +28,9 @@
   "wednesday": "Wednesday",
   "thursday": "Thursday",
   "firday": "Friday",
-  "waterUnavailable": "Unavailable",
-  "period": "available from {from} to {to}",
-  "multiPeriod": "available from {from} to {to} then from {secondFrom} to {secondTo}"
+  "offlineTitle": "You're offline",
+  "offlineSubTitle": "Check your internet connection then retry",
+  "retry": "Retry",
+  "noInternetStill": "You're still offline",
+  "internetRestored": "You're back online"
 }

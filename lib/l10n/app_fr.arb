@@ -67,5 +67,10 @@
   "tuesday": "Mardi",
   "wednesday": "Mercredi",
   "thursday": "Jeudi",
-  "firday": "Vendredi"
+  "firday": "Vendredi",
+  "offlineTitle": "Vous êtes hors ligne",
+  "offlineSubTitle": "Veuillez vérifier votre connexion internet puis réessayer",
+  "retry": "Réessayer",
+  "noInternetStill": "Connexion pas encore rétablie",
+  "internetRestored": "Connexion rétablie!"
 }

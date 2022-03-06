@@ -27,5 +27,10 @@
   "firday": "الجمعة",
   "waterUnavailable": "قطع كامل طوال اليوم",
   "period": "إبتداءا من {from} إلى غاية {to}",
-  "multiPeriod": "إبتداءا من {from} إلى غاية {to} ثم من {secondFrom} إلى {secondTo}"
+  "multiPeriod": "إبتداءا من {from} إلى غاية {to} ثم من {secondFrom} إلى {secondTo}",
+  "offlineTitle": "أنت غير متصل حالياً",
+  "offlineSubTitle": "الرجاء التأكد من الإتصل بلأنترنت ثم إعادةالمحاولة",
+  "retry": "محاولة",
+  "noInternetStill": "لم يتم الاتصال بعد",
+  "internetRestored": "تمت اعادة الاتصال!"
 }
