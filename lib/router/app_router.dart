@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import '../screens/offline_screen/offline_screen.dart';
 import '../screens/splash_screen/splash_screen.dart';
 import '../screens/settings_screen/components/settings_lang_selector.dart';
 import '../screens/settings_screen/components/settings_theme_selector.dart';
@@ -15,6 +16,13 @@ import '../screens/settings_screen/settings_screen.dart';
       page: SplashScreen,
       name: "SplashRouter",
       path: SplashScreen.routeName,
+      transitionsBuilder: TransitionsBuilders.fadeIn,
+    ),
+    CustomRoute(
+      initial: true,
+      page: OfflineScreen,
+      name: "OfflineRouter",
+      path: OfflineScreen.routeName,
       transitionsBuilder: TransitionsBuilders.fadeIn,
     ),
     CustomRoute(
