@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../widgets/bottom_illustration.dart';
 import 'components/home_schedule_form.dart';
 
 import './components/home_header.dart';
@@ -9,51 +10,18 @@ class HomeScreen extends StatelessWidget {
 
   static const routeName = "/home";
 
-  String _getButtomImageAssetName(
-      {required BuildContext context, required bool isWideScreen}) {
-    final Brightness appTheme = Theme.of(context).brightness;
-
-    if (isWideScreen) {
-      return "waves-bg-r.png";
-    } else {
-      if (appTheme == Brightness.light) {
-        return "waves-bg.png";
-      } else {
-        return "waves-bg-dark.png";
-      }
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
-    final bool isWideScreen = MediaQuery.of(context).size.width > 400;
-    final String bgBottomImage = _getButtomImageAssetName(
-      context: context,
-      isWideScreen: isWideScreen,
-    );
-
     return Scaffold(
       body: SafeArea(
         child: Stack(
           fit: StackFit.expand,
           children: [
-            Positioned(
+            const Positioned(
               bottom: 0,
               left: 0,
               right: 0,
-              child: Container(
-                width: double.infinity,
-                height: MediaQuery.of(context).size.height * .15,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    repeat: isWideScreen
-                        ? ImageRepeat.repeatX
-                        : ImageRepeat.noRepeat,
-                    image: AssetImage("assets/images/$bgBottomImage"),
-                    fit: isWideScreen ? BoxFit.contain : BoxFit.cover,
-                  ),
-                ),
-              ),
+              child: BottomIllustration(),
             ),
             Column(
               children: const [
