@@ -7,7 +7,7 @@ This project stemed from the unfortunate water crisis that has befallen on my co
 ## App in Action
 
 <p align="center">
-  <img src="./.github/app-in-action.gif" width="319" height="640" />
+  <img src="./.github/app-in-action.webp" width="319" height="640" />
 </p>
 
 ## Features
@@ -18,6 +18,7 @@ This project stemed from the unfortunate water crisis that has befallen on my co
 - Multiligual.
 - Supports both Android and iOS.
 - Data caching to prevent unnecessary api calls.
+- Connectivity monitoring.
 
 ## Development
 
