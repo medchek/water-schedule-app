@@ -1,5 +1,5 @@
 name: seaal_water_schedule_app
-description: An app to get water schedule time.
+description: An app to get water availablity schedule times.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -41,6 +41,7 @@ dependencies:
   basic_utils: ^3.8.2
   auto_route: ^3.2.1
   shared_preferences: ^2.0.12
+  connectivity_plus: ^2.2.1
 
   # mobx deps
   provider: ^6.0.1
