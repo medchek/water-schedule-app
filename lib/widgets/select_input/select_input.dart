@@ -52,7 +52,7 @@ class SelectInput extends StatelessWidget {
               style: TextStyle(
                 fontFamily: isArLocale ? "Noto Kufi Arabic" : null,
                 color: !disabled ? theme.primaryColor : AppColors.appGrey,
-                fontSize: isSmHight ? 13 : 15,
+                fontSize: isSmHight ? 14 : 15,
               ),
             ),
             value: value,
