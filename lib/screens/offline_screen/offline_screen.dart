@@ -7,7 +7,6 @@ import '../../store/modules/connectivity.dart';
 import '../../utils/app_colors.dart';
 import '../../utils/locale_utils.dart';
 import '../../widgets/bottom_illustration.dart';
-import '../home_screen/home_screen.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -28,9 +27,7 @@ class OfflineScreen extends StatelessWidget {
     String snackText = t.noInternetStill;
 
     if (connectivityResult != ConnectivityResult.none) {
-      final String redirectTo = !connectivityStore.isHistoryEmpty
-          ? connectivityStore.lastVisitedPage
-          : HomeScreen.routeName;
+      final String redirectTo = connectivityStore.lastVisitedPage;
 
       snackBgColor = Colors.white;
       snackTextColor = AppColors.appDarkBlueVariant;

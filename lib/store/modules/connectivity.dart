@@ -3,15 +3,29 @@ import 'package:flutter/widgets.dart';
 import 'package:mobx/mobx.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 
+import '../../screens/home_screen/home_screen.dart';
+import '../../screens/offline_screen/offline_screen.dart';
+import '../../screens/splash_screen/splash_screen.dart';
+
 part 'connectivity.g.dart';
 
 class ConnectivityStore = _ConnectivityStore with _$ConnectivityStore;
 
 abstract class _ConnectivityStore with Store {
+  /// This should be the path of the route declared as the routeName in each screen.
+  /// Example: HomeScreen = /home
   @observable
   String _lastVisitedPage = "";
 
-  String get lastVisitedPage => _lastVisitedPage;
+  String get lastVisitedPage {
+    if (_lastVisitedPage == OfflineScreen.routeName ||
+        _lastVisitedPage == SplashScreen.routeName ||
+        _lastVisitedPage == "") {
+      return HomeScreen.routeName;
+    } else {
+      return _lastVisitedPage;
+    }
+  }
 
   bool get isHistoryEmpty => _lastVisitedPage.isEmpty;
 
